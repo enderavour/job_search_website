@@ -1,4 +1,5 @@
 import { categories } from "../constants/categories";
+import { PopularCategories } from "../components/PopularCategories";
 
 export const HomePage = () => {
   return (
@@ -27,22 +28,7 @@ export const HomePage = () => {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-20">
-        <h2 className="text-3xl font-bold">
-          Popular categories
-        </h2>
-
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {categories.map((category) => (
-            <button
-              key={category}
-              className="rounded-2xl border border-gray-200 p-6 text-left"
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-      </section>
+      <PopularCategories />
 
       <section className="mx-auto max-w-7xl px-6 py-20">
         <div className="rounded-3xl bg-blue-50 p-10">
