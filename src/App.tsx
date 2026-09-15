@@ -8,12 +8,17 @@ import { PartnersPage } from "./pages/PartnersPage";
 import { ContactsPage } from "./pages/ContactsPage";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
+import { ScrollToTop } from "./components/ScrollToTop";
+import { AboutPage } from "./pages/AboutPage";
+import { PrivacyPage } from "./pages/PrivacyPage";
+import { TermsPage } from "./pages/TermsPage";
 
 function App()
 {
   return (
     <BrowserRouter>
       <Header/>
+      <ScrollToTop />
 
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -25,6 +30,10 @@ function App()
           path="/contacts"
           element={<ContactsPage />}
         />
+
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/privacy" element={<PrivacyPage />} />
+        <Route path="/terms" element={<TermsPage />} />
       </Routes>
 
       <Footer/>

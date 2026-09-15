@@ -1,5 +1,5 @@
-import { categories } from "../constants/categories";
 import { PopularCategories } from "../components/PopularCategories";
+import { EmployerCta } from "../components/EmployerCta";
 
 export const HomePage = () => {
   return (
@@ -30,22 +30,7 @@ export const HomePage = () => {
 
       <PopularCategories />
 
-      <section className="mx-auto max-w-7xl px-6 py-20">
-        <div className="rounded-3xl bg-blue-50 p-10">
-          <h2 className="text-3xl font-bold">
-            Need employees?
-          </h2>
-
-          <p className="mt-4 max-w-xl text-gray-600">
-            Find qualified workers for your business
-            with VV work.
-          </p>
-
-          <button className="mt-6 rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white">
-            Find a worker
-          </button>
-        </div>
-      </section>
+      <EmployerCta />
     </main>
   );
 };
