@@ -3,7 +3,7 @@ import {
   submitApplication,
   type ContactFormData
 } from "../api/mockFetch";
-import { contactRegex } from "../constants/regex";
+import { validateForm } from "../utils/validation";
 
 type FormErrors = {
   name?: string;
@@ -22,24 +22,6 @@ export const ApplicationForm = () => {
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const validateForm = (data: ContactFormData): FormErrors => {
-    const errors: FormErrors = {};
-
-    if (data.name.trim().length < 2) {
-      errors.name = "Name must contain atleast 2 characters";
-    }
-
-    if (!contactRegex.test(data.contact.trim())) {
-      errors.contact = "Enter a valid phone number or Telegram username.";
-    }
-
-    if (data.message.length > 500) {
-      errors.message = "Message must be no more than 500 characters.";
-    }
-
-    return errors;
-  }
 
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -68,11 +50,11 @@ export const ApplicationForm = () => {
       return;
     }
 
-    setIsSubmitted(true);
     setIsSubmitting(true);
 
     try {
       await submitApplication(formData);
+      setIsSubmitted(true);
     } catch {
       setIsSubmitted(false);
 

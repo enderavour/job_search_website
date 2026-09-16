@@ -31,3 +31,9 @@ export const submitApplication = async (
 ): Promise<void> => {
   await mockFetch(data);
 };
+
+export const submitContactForm = async (
+  data: ContactFormData
+): Promise<void> => {
+  await mockFetch(data);
+};

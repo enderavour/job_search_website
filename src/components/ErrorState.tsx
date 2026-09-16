@@ -1,12 +1,12 @@
-type Props = {
+type ErrorStateProps = {
   message?: string;
   onRetry: () => void;
 };
 
 export const ErrorState = ({
-  message,
+  message = "We couldn't load the vacancies.",
   onRetry
-}: Props) => {
+}: ErrorStateProps) => {
   return (
     <div className="rounded-2xl border border-gray-200 bg-white px-6 py-12 text-center shadow-sm">
       <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-gray-100">

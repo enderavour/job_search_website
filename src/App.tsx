@@ -12,6 +12,7 @@ import { ScrollToTop } from "./components/ScrollToTop";
 import { AboutPage } from "./pages/AboutPage";
 import { PrivacyPage } from "./pages/PrivacyPage";
 import { TermsPage } from "./pages/TermsPage";
+import { FindWorkerPage } from "./components/FindWorkerPage";
 
 function App()
 {
@@ -34,6 +35,7 @@ function App()
         <Route path="/about" element={<AboutPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/terms" element={<TermsPage />} />
+        <Route path="/find-worker" element={<FindWorkerPage />} />
       </Routes>
 
       <Footer/>

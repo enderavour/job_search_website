@@ -1,4 +1,4 @@
-import { ApplicationForm } from "../components/ApplicationForm";
+import { ContactsForm } from "../components/ContactsForm";
 
 export const ContactsPage = () => {
   return (
@@ -14,7 +14,10 @@ export const ContactsPage = () => {
             Send us a message and we will get back to you.
           </p>
         </div>
-        <ApplicationForm />
+
+        <div className="mt-6">
+          <ContactsForm />
+        </div>
       </section>
     </main>
   );

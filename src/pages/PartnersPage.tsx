@@ -4,25 +4,17 @@ import { getVacancies } from "../api/mockFetch";
 import type { Vacancy } from "../mocks/mockVacancies";
 import { LoadSkeleton } from "../components/LoadSkeleton";
 import { ErrorState } from "../components/ErrorState";
+import { useDebouncedValue } from "../utils/useDebouncedValue";
 
 export const PartnersPage = () => {
   const [search, setSearch] = useState("");
-  const [debouncedSearch, setDebounсedSearch] = useState("");
   const [category, setCategory] = useState("All");
 
   const [vacancies, setVacancies] = useState<Vacancy[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setDebounсedSearch(search);
-    }, 300);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [search]);
+  const debouncedSearch = useDebouncedValue(search, 300);
 
   const filteredVacancies = useMemo(() => {
     return vacancies.filter((vacancy) => {
