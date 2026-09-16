@@ -16,8 +16,8 @@ npm install
 ```cmd
 npm run dev
 ```
-Afterwards, Vite will start the project and provide the url, e.g. Local: http://localhost:5173/
-Opean that address in your browser. 
+Afterwards, Vite will start the project and provide the url, e.g. Local: http://localhost:5173/.<br>
+Open that address in your browser. 
 
 ### 2. Run the tests 
 - To run the tests:
