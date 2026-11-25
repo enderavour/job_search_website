@@ -5,11 +5,11 @@ Website Front end project for job search in Europe. Implements vacancies search,
 ### 1. How to start 
 - Clone Github repository:
 ```cmd
-git clone https://github.com/enderavour/intern_vv.git
+git clone https://github.com/enderavour/job_search_website.git
 ```
 - Navigate to created directory, initialize npm and install dependencies 
 ```cmd
-cd intern_vv
+cd job_search_website
 npm install
 ```
 - Run the project
